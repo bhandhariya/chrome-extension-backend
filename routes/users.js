@@ -33,4 +33,15 @@ Template.find(function(err,result){
 
 })
 
+router.post("/deletebyid",function(req,res,next){
+  Template.findByIdAndRemove(req.body.id).exec(function(err,result){
+    if(!err && result){
+      res.send(result)
+    }else{
+      console.log(err)
+    }
+  })
+})
+
+
 module.exports = router;
