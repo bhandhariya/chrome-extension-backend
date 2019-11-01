@@ -23,15 +23,13 @@ temp.save(function(err,result){
 
 router.get("/all",function(req, res, next) {
 
-// Template.find(function(err,result){
-//   if(!err && result){
-//     return res.send(result)
-//   }else{
-//     console.log(err);
-//   }
-// })
-
-Template.remove();
+Template.find(function(err,result){
+  if(!err && result){
+    return res.send(result)
+  }else{
+    console.log(err);
+  }
+})
 
 })
 
